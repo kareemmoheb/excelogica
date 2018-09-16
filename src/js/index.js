@@ -1,0 +1,1 @@
+import a from '../img/a.jpg';
