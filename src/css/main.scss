@@ -1,10 +1,10 @@
+@import './vendors/bootstrap.min.css';
+@import './base/colors';
+@import './base/typo';
+
 body{
-    margin: 0;
-}
-.box {
-    width: 200px;
-    height: 200px;
-    background-color: #569;
-    border-radius: 6px;
-    text-align: right;
+    font-family: $secondryFont;
+    max-width: 1920px;
+    background-color: $themeColor;
+    overflow: hidden;
 }
