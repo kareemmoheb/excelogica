@@ -1,1 +1,2 @@
-import a from '../img/a.jpg';
+import '../index.html';
+import '../css/main.scss';

@@ -1,8 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.html',
+    entry: {
+        main: './src/js/index.js'
+    },
     output: {
         path: path.resolve(__dirname , './dist'),
         filename: 'js/bundle.js',
@@ -16,12 +19,22 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html',
         }),
+        new ExtractTextPlugin({
+            filename: 'css/bundle.css'
+        }),
     ],
     module: {
         rules:[
             {
                 test: /\.html$/,
                 use: ['html-loader']
+            },
+            {
+                test: /\.(s*)css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [ 'css-loader', 'sass-loader'],
+                }) 
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/,
@@ -34,10 +47,7 @@ module.exports = {
                             publicPath: 'img/'
                         }, 
                     },
-                    'img-loader'  
                 ],
-
- 
             },
         ]
     }
