@@ -1,0 +1,30 @@
+.header{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 8em;
+    padding: 10px 0 0 10px;
+}
+.logo{
+    width: 80%;
+    text-align: right
+}
+.header_nav{
+    display: grid;
+    grid-template-columns: repeat(8 , auto);
+    grid-template-rows: auto;
+    align-items: end;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.header_nav li{
+    font-size: 1vw;
+    text-transform: uppercase;
+}
+.header_nav li a:hover{
+    color: #717171;
+}
+.header_nav li a.active{
+    color: #717171;
+}
+

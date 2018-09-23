@@ -1,10 +1,5 @@
-@import './vendors/bootstrap.min.css';
 @import './base/colors';
 @import './base/typo';
-
-body{
-    font-family: $secondryFont;
-    max-width: 1920px;
-    background-color: $themeColor;
-    overflow: hidden;
-}
+@import './base/base';
+@import './components/header';
+@import './components/main-slider';
